@@ -86,7 +86,7 @@ function checkForHit(event) {
   let element = event.target;
   console.log(element)
   let number = Number(element.innerHTML);
-  
+
   if (checkIfNumExists(number, global.numbers) == true) {
     element.classList.add('hit');
     checkWin(element);
@@ -95,6 +95,7 @@ function checkForHit(event) {
     global.miss++;
     if(global.miss == 3){
       alert("YOU DISQUALIFIED!!!")
+      location.reload();
     }
   }
 }
@@ -111,19 +112,19 @@ export function drawNumber() {
 }
 
 function checkWin(element){
-  let count = 1;
+  let count = 0;
 
   document.querySelectorAll(`td[data-row="${element.dataset.row}"]`).forEach((item) => {if(item.classList.contains('hit')) count++})
   
   if(count == 7){
     alert("YOU WIN!!!!")
-    return;
+    location.reload();
   }
-  count = 1;
+  count = 0;
   document.querySelectorAll(`td[data-col="${element.dataset.col}"]`).forEach((item) => {if(item.classList.contains('hit')) count++})
   if(count == 7){
     alert("YOU WIN!!!!")
-    return;
+    location.reload(); 
   }
 
 }
