@@ -1,0 +1,46 @@
+.btn {
+  outline: none;
+  box-shadow: 0px 0px 8px #888;
+  background-color: #39c;
+}
+
+table,
+tr,
+td {
+  font-size: 30px;
+  border-collapse: collapse;
+  border: 1px solid #000;
+  padding: 30px;
+}
+
+#board table {
+
+  height: 400px;
+  width: 400px;
+  margin: 5px auto;
+  text-align: center;
+}
+
+#board table td:hover{
+  cursor: pointer;
+  background-color: rgba(255, 166, 0, 0.438);
+}
+
+.hit {
+  position: relative;
+}
+
+.hit::after {
+  content: 'X';
+  width: 100%;
+  color: brown;
+  font-size: 32px;
+
+  position: absolute;
+  top: -8px;
+  left:0;
+}
+
+#numbers{
+  font-size: 30px;
+}
